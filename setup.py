@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="yellowduck", 
-    version="0.0.1",
+    version="0.0.1b",
     author="Chalat Phumphiraratthaya",
     author_email="chalat.phum@gmail.com",
     description="Data Science Toolbox for everyone",
