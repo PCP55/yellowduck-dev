@@ -5,11 +5,18 @@ Data Science Toolbox for everyone
 # Can do
 
 - Check duplicate image
+- Visualize duplicate image from above
+- Clean Text
 
 # Prerequisites
 
-- os
 - hashlib
+- imagehash
+- matplotlib
+- numpy
+- os
+- pillow
+- re
 
 # Install
 

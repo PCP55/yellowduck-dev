@@ -31,6 +31,10 @@ class duplicate():
         self.remove_filename_list = [] # List of similar image except original one
         self.similar_group_dict = {} # Group of similar image including original one
 
+    def from_directory():
+
+    def from_image():
+
     #################################################################
     # Find    
     def find(self, mode = 'same', distance = 0, phash_size = 16):
@@ -169,7 +173,7 @@ class duplicate():
 #             matplotlib show duplicate or similar picture
             print(self.similar_group_dict)
         except:
-            print('Please run it in notebook')
+            print('Please run it in iPython Notebook')
 
     #################################################################
     # Move 
