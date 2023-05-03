@@ -37,3 +37,4 @@ class IDValidator:
 
     def validate(self):
         return self.id_type.is_valid(id=self.id)
+
