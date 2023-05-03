@@ -1,6 +1,5 @@
 # yellowduck
 
-
 [![PyPI Latest Release](https://img.shields.io/pypi/v/yellowduck?style=for-the-badge)](https://pypi.org/project/yellowduck/)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/yellowduck?style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/PCP55/yellowduck-dev?style=for-the-badge)
@@ -16,31 +15,37 @@ Actually, **yellowduck** is like a sandbox library for me. If I found something 
 
 ## Main Features
 
-- Check duplicate image
-- Visualize duplicate image from above
-- Clean Text
-
-In addition, you can see the next features [https://github.com/PCP55/yellowduck-dev/projects/1](here)!
+- Check duplicate image and visualize it!
+- Clean text
 
 ## Example
 
-Please go to this [Link](https://github.com/PCP55/yellowduck-dev/tree/main/_dev)
+Please go to this [Link](https://github.com/PCP55/yellowduck-dev/tree/main/examples)
 
-## Prerequisites (from A to Z)
-
-- hashlib
-- imagehash
-- matplotlib
-- numpy
-- os
-- pillow
-- re
 
 ## Install
 
+You have to specify functions you want to use:
+If you need full option of `yellowduck`, you can install it by using:
+
 ```ruby
 # PyPI
-pip install yellowduck
+
+pip install "yellowduck[full]==x.x.x"
+```
+
+However, if you need to use only text's functions or image's function, you will need:
+
+```ruby
+# PyPI
+
+pip install "yellowduck[text]==x.x.x"
+
+# or
+
+pip install "yellowduck[image]==x.x.x"
+
+# accordingly
 ```
 
 ## Found Issues
@@ -49,4 +54,4 @@ Create New Issue [here](https://github.com/PCP55/yellowduck-dev/issues) and I wi
 
 ---------------------------------------
 
-> This library inspired by [kora](https://github.com/airesearch-in-th/kora/tree/master/kora), A collection of tools to make programming on Google Colab easier.
+> This library was inspired by [kora](https://github.com/airesearch-in-th/kora/tree/master/kora), A collection of tools to make programming on Google Colab easier.
