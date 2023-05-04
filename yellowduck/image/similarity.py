@@ -20,7 +20,7 @@ class ExactMatching(ImageMatchingStrategy):
         Find similar images using MD5 hashing method
         """
         print(f"Using method: Exact Matching")
-        images_index = []
+        images_index = get_similar(self.images_list)
         return images_index
 
 
@@ -30,7 +30,7 @@ class SimilarMatchingPHash(ImageMatchingStrategy):
         Find similar images using PHash hashing method
         """
         print(f"Using method: Similar Matching using PHash")
-        images_index = []
+        images_index = get_similar(self.images_list)
         return images_index
 
 
