@@ -7,6 +7,8 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/PCP55/yellowduck-dev?style=for-the-badge)
 ![Lines of code](https://img.shields.io/tokei/lines/github/PCP55/yellowduck-dev?style=for-the-badge)
 
+![](assets/yellowduck.png?raw=true)
+
 ## What is it?
 
 **yellowduck** is the data science toolbox for everyone. To be precise, for the lazy man like me!
@@ -15,8 +17,9 @@ Actually, **yellowduck** is like a sandbox library for me. If I found something 
 
 ## Main Features
 
-- Check duplicate image and visualize it!
-- Clean text
+- Image grouping by its similarity
+- Text grouping by its similarity
+- Text cleansing function
 
 ## Example
 

@@ -8,30 +8,39 @@ import PIL
 from utils.similarity import get_similar
 
 
-class ImageMatchingStrategy(ABC):
+class ImageGroupingStrategy(ABC):
     @abstractmethod
     def get_similar_images_index(self, **kwargs) -> list:
         pass
 
 
-class ExactMatching(ImageMatchingStrategy):
+class ExactGrouping(ImageGroupingStrategy):
     def get_similar_images_index(self, **kwargs) -> list:
         """
         Find similar images using MD5 hashing method
         """
-        print(f"Using method: Exact Matching")
+        print(f"Using method: Exact Grouping")
         images_index = get_similar(self.images_list)
         return images_index
 
 
-class SimilarMatchingPHash(ImageMatchingStrategy):
+class SimilarGroupingPHash(ImageGroupingStrategy):
     def get_similar_images_index(self, **kwargs) -> list:
         """
         Find similar images using PHash hashing method
         """
-        print(f"Using method: Similar Matching using PHash")
+        print(f"Using method: Similar Grouping using PHash")
         images_index = get_similar(self.images_list)
         return images_index
+
+
+class ImageGrouping():
+    def __init__(self):
+        pass
+
+
+    def get_group(self):
+        pass
 
 
 class ImageDuplicate:

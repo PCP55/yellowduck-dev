@@ -3,7 +3,8 @@
 
 ## Version 1.1.0
 
-- [image.similarity] Introduce dbscan for image similarity finder.
+- [image.grouping] Introduce dbscan for image similarity finder.
+- [text.grouping] Introduce dbscan for text similarity finder.
 - [text.cleansing] Introduce much more text cleansing methods.
 - Refactor code
 - Add comments to each function

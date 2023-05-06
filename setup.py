@@ -7,7 +7,7 @@ extras_require = {
     "text": [
         "fuzzywuzzy>=0.18.0",
         "pythainlp>=2.3.2",
-        "python-levenshtein>=0.12.2",
+        "strsimpy>=0.2.1",
     ],
     "image": [
         "cryptography>=36.0.2",
@@ -21,7 +21,7 @@ extras_require["full"] = [
 
 setuptools.setup(
     name="yellowduck",
-    version="1.0.0",
+    version="1.1.0",
     author="Chalat Phumphiraratthaya",
     author_email="chalat.phum@gmail.com",
     description="Data Science Toolbox for everyone",
@@ -41,6 +41,7 @@ setuptools.setup(
         "pep8-naming>=0.13.3",
         "isort>=5.11.5",
         "pre-commit>=2.21.0",
+        "scikit-learn>=1.0.0"
     ],
     extras_require=extras_require,
     include_package_data=True,
