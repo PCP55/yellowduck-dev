@@ -41,7 +41,7 @@ setuptools.setup(
         "pep8-naming>=0.13.3",
         "isort>=5.11.5",
         "pre-commit>=2.21.0",
-        "scikit-learn>=1.0.0"
+        "scikit-learn>=1.0.0",
     ],
     extras_require=extras_require,
     include_package_data=True,

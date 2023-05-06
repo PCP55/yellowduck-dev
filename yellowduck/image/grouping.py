@@ -34,10 +34,9 @@ class SimilarGroupingPHash(ImageGroupingStrategy):
         return images_index
 
 
-class ImageGrouping():
+class ImageGrouping:
     def __init__(self):
         pass
-
 
     def get_group(self):
         pass
