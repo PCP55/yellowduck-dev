@@ -13,7 +13,7 @@
 
 **yellowduck** is the data science toolbox for everyone. To be precise, for the lazy man like me!
 
-Actually, **yellowduck** is like a sandbox library for me. If I found something great I will surely add it in **yellowduck**. 
+Actually, **yellowduck** is like a sandbox library for me. If I found something great I will surely add it in **yellowduck**.
 
 ## Main Features
 

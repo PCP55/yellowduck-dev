@@ -1,10 +1,10 @@
-from abc import ABC, abstractmethod
 import hashlib
+import os
+from abc import ABC, abstractmethod
+
 import imagehash
 import numpy as np
-import os
 import PIL
-
 from utils.similarity import get_similar
 
 
@@ -19,7 +19,7 @@ class ExactGrouping(ImageGroupingStrategy):
         """
         Find similar images using MD5 hashing method
         """
-        print(f"Using method: Exact Grouping")
+        print("Using method: Exact Grouping")
         images_index = get_similar(self.images_list)
         return images_index
 
@@ -29,7 +29,7 @@ class SimilarGroupingPHash(ImageGroupingStrategy):
         """
         Find similar images using PHash hashing method
         """
-        print(f"Using method: Similar Grouping using PHash")
+        print("Using method: Similar Grouping using PHash")
         images_index = get_similar(self.images_list)
         return images_index
 
@@ -38,17 +38,20 @@ class ImageGrouping:
     def __init__(self):
         pass
 
+    def _hamming_distance(self, x, y):
+        """
+        Implement DBScan to find similarity
+        """
+        i, j = int(x[0]), int(y[0])
+        return abs(self.list_of_hash_images[i] - self.list_of_hash_images[j])
+
     def get_group(self):
         pass
 
 
 class ImageDuplicate:
     def __init__(self, image_folder_path: str):
-        try:  # For development phase only
-            get_ipython
-            self.current_path = os.getcwd()
-        except:  # For production
-            self.current_path = os.path.dirname(os.path.realpath(__file__))
+        self.current_path = os.path.dirname(os.path.realpath(__file__))
         self.current_path = os.path.join(self.current_path, image_folder_path)
 
         self.image_in_folder_list = [
@@ -67,7 +70,7 @@ class ImageDuplicate:
         self.duplicate_list = []  # The rest that not be selected in non_duplicate_list
 
     def find_exact(self):
-        print(f"Using method: Exact Match (MD5)")
+        print("Using method: Exact Match (MD5)")
 
         for image_file in self.image_in_folder_list:
             image_fullpath = os.path.join(self.current_path, image_file)

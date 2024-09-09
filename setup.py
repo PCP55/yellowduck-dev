@@ -22,7 +22,7 @@ extras_require["full"] = [
 setuptools.setup(
     name="yellowduck",
     version="1.1.0",
-    author="Chalat Phumphiraratthaya",
+    author="Chalat Ph.",
     author_email="chalat.phum@gmail.com",
     description="Data Science Toolbox for everyone",
     long_description=long_description,
@@ -36,11 +36,6 @@ setuptools.setup(
     ],
     python_requires=">=3.6",
     install_requires=[
-        "black>=22.12.0",
-        "flake8>=6.0.0",
-        "pep8-naming>=0.13.3",
-        "isort>=5.11.5",
-        "pre-commit>=2.21.0",
         "scikit-learn>=1.0.0",
     ],
     extras_require=extras_require,
