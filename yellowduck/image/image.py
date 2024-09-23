@@ -2,26 +2,23 @@
 
 There are 2 approachs.
 1. exact match:     Using Cryptographic hashing algorithms in 'hashlib'
-2. similar match:   Using Perceptual hashing algorithms in 'imagehash' 
+2. similar match:   Using Perceptual hashing algorithms in 'imagehash'
                     and use Hamming distance for finding differrence.
 """
 
-import os
-import PIL
 import hashlib
+import os
+
 import imagehash
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+import PIL
 
 
 class ImageDuplicate:
     def __init__(self, image_folder_path: str):
         print("This is legacy function. It will be deprecated in the next version.")
-        try:  # For development phase only
-            get_ipython
-            self.current_path = os.getcwd()
-        except:  # For production
-            self.current_path = os.path.dirname(os.path.realpath(__file__))
+        self.current_path = os.path.dirname(os.path.realpath(__file__))
         self.current_path = os.path.join(self.current_path, image_folder_path)
 
         self.image_in_folder_list = [
@@ -40,7 +37,7 @@ class ImageDuplicate:
         self.duplicate_list = []  # The rest that not be selected in non_duplicate_list
 
     def find_exact(self):
-        print(f"Using method: Exact Match (MD5)")
+        print("Using method: Exact Match (MD5)")
 
         for image_file in self.image_in_folder_list:
             image_fullpath = os.path.join(self.current_path, image_file)
@@ -183,55 +180,6 @@ class ImageDuplicate:
         )
 
         return self.similar_group_dict, self.duplicate_list, self.non_duplicate_list
-
-
-class ShowImageDuplicate:
-    def __init__(self, image_folder_path, group_of_duplicate_dict: dict):
-        self.image_folder_path = image_folder_path
-        self.group_of_duplicate_dict = group_of_duplicate_dict
-
-        self.number_of_group = len(self.group_of_duplicate_dict)
-        print(
-            f"There are {self.number_of_group} of duplicate image.\nUse .show_group(group_number) or .show_all() for all group."
-        )
-
-    def show_all(self):
-        """
-        Show only first 5 images in each group
-        """
-        fig, axes = plt.subplots(nrows=self.number_of_group, ncols=5, figsize=(24, 24))
-        for axis in axes.ravel():
-            axis.set_axis_off()
-        for group_number in np.arange(self.number_of_group):
-            image_list = self.group_of_duplicate_dict[group_number]
-            if len(image_list) > 5:
-                image_list = image_list[:5]
-            for image_number in np.arange(len(image_list)):
-                image_path = os.path.join(
-                    self.image_folder_path, image_list[image_number]
-                )
-                image = PIL.Image.open(image_path)
-                axes[group_number, image_number].imshow(image)
-        plt.tight_layout()
-
-    def show_group(self, group_number):
-        image_list = self.group_of_duplicate_dict[group_number]
-        if len(image_list) < 5:
-            num_col = len(image_list)
-        else:
-            num_col = 5
-        num_row = int(len(image_list) / num_col)
-        mod = len(image_list) % num_col
-        if mod != 0:
-            num_row = num_row + 1
-        fig, axes = plt.subplots(nrows=num_row, ncols=num_col, figsize=(24, 10))
-        for axis in axes.ravel():
-            axis.set_axis_off()
-        for index, image_name in enumerate(image_list):
-            image_path = os.path.join(self.image_folder_path, image_name)
-            image = PIL.Image.open(image_path)
-            axes.ravel()[index].imshow(image)
-        plt.tight_layout()
 
 
 class ShowImageDuplicate:
